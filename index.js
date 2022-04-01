@@ -6,8 +6,9 @@
 /* Modified : 03/31/2022        */
 /* ---------------------------- */
 // TODO: Include packages needed for this application
-const fs = require('fs');
 const inquirer = require('inquirer');
+const readmeTemplate = require('./src/markdownTemplate.js');
+const generateReadme = require('./utils/generateMarkdown.js');
 // TODO: Create an array of questions for user input
 //const questions = [];
 const promptReadme = () => {
@@ -16,8 +17,8 @@ const promptReadme = () => {
             type: 'input',
             name: 'name',
             message: 'What is your name? (Required)',
-            validate: projectInput => {
-                if (projectInput) {
+            validate: nameInput => {
+                if (nameInput) {
                     return true;
                 } else {
                     console.log('Please enter your name!');
@@ -94,11 +95,24 @@ const promptReadme = () => {
             type: 'input',
             name: 'projectCredits',
             message: 'Enter the creator(s), collaborators and/or contributors (Required)',
+            validate: creditsInput => {
+                if (creditsInput) {
+                    return true;
+                } else {
+                    console.log('Please enter the creator(s), collaborators and/or contributors!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'contributionGuidelines',
+            message: 'Enter the scontribution guidelines',
             validate: contributionInput => {
                 if (contributionInput) {
                     return true;
                 } else {
-                    console.log('Please enter the creator(s), collaborators and/or contributors!');
+                    console.log('Please enter the scontribution guidelines!');
                     return false;
                 }
             }
@@ -126,17 +140,22 @@ const promptReadme = () => {
 };
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+//function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 //function init() {}
 promptReadme()
-    .then(answers => {
-        console.log(answers);
+    .then(readmeAnswers => {
+        return readmeTemplate(readmeAnswers);
+    })
+    .then(readmeData => {
+        return generateReadme(readmeData);
+    })
+    .then(readmeFile => {
+        console.log(readmeFile.message);
     })
     .catch(err => {
         console.log(err);
     });
-console.log("ES ASINCRONO");
 // Function call to initialize app
 //init();
