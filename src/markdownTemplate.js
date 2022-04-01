@@ -20,7 +20,7 @@ function renderLicenseSection(license) {}
 
 module.exports = markdownData => {
     // Destructure page data by section
-    //const { name } = markdownData;
+    const { name, github, projectName, projectDescription, installInstructions, usageInstructions, projectCredits, contributionGuidelines, license,  } = markdownData;
     return `# ${markdownData.projectName}
   
 ## Description
@@ -32,8 +32,10 @@ ${markdownData.projectDescription}
 
 * [Installation](#installation)
 * [Usage](#usage)
-* [Credits](#credits)
+* [Contributing](#contributing)
+* [Test](#test)
 * [License](#license)
+* [Questions](#questions)
 
 
 ## Installation
@@ -46,16 +48,6 @@ ${markdownData.installInstructions}
 ${markdownData.usageInstructions}
 
 
-## Credits
-
-${markdownData.projectCredits}
-
-
-## License
-
-${markdownData.license}
-
-
 ## Contributing
 
 ${markdownData.contributionGuidelines}
@@ -64,6 +56,17 @@ ${markdownData.contributionGuidelines}
 ## Tests
 
 ${markdownData.contributionGuidelines}
+
+
+## License
+
+${markdownData.license}
+
+
+## Questions
+
+${markdownData.github}
+
   
     `;
 };

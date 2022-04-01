@@ -11,12 +11,17 @@ const readmeTemplate = require('./src/markdownTemplate.js');
 const generateReadme = require('./utils/generateMarkdown.js');
 // TODO: Create an array of questions for user input
 //const questions = [];
-const promptReadme = () => {
+const promptPersonal = () => {
+    console.log(`
+  ========================================
+  Please provide your personal information
+  ========================================
+  `)
     return inquirer.prompt([
         {
             type: 'input',
             name: 'name',
-            message: 'What is your name? (Required)',
+            message: 'What is your name?',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -28,8 +33,21 @@ const promptReadme = () => {
         },
         {
             type: 'input',
+            name: 'email',
+            message: 'What is your e-mail?',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a valid e-mail!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
             name: 'github',
-            message: 'Enter your GitHub Username (Required)',
+            message: 'Enter your GitHub Username:',
             validate: githubInput => {
                 if (githubInput) {
                     return true;
@@ -38,11 +56,20 @@ const promptReadme = () => {
                     return false;
                 }
             }
-        },
+        }
+    ])
+};
+const promptProject = () => {
+    console.log(`
+  ======================================
+  Please provide the project information
+  ======================================
+      `)
+        return inquirer.prompt([
         {
             type: 'input',
             name: 'projectName',
-            message: 'What is your project name? (Required)',
+            message: 'What is your project name?',
             validate: projectInput => {
                 if (projectInput) {
                     return true;
@@ -55,7 +82,7 @@ const promptReadme = () => {
         {
             type: 'input',
             name: 'projectDescription',
-            message: 'Enter a description for your project (Required)',
+            message: 'Enter a description for your project:',
             validate: descriptionInput => {
                 if (descriptionInput) {
                     return true;
@@ -68,7 +95,7 @@ const promptReadme = () => {
         {
             type: 'input',
             name: 'installInstructions',
-            message: 'Enter the instructions to install (Required)',
+            message: 'Enter the instructions to install:',
             validate: installInput => {
                 if (installInput) {
                     return true;
@@ -81,7 +108,7 @@ const promptReadme = () => {
         {
             type: 'input',
             name: 'usageInstructions',
-            message: 'Enter the instructions to use (Required)',
+            message: 'Enter the instructions to use:',
             validate: usageInput => {
                 if (usageInput) {
                     return true;
@@ -93,21 +120,8 @@ const promptReadme = () => {
         },
         {
             type: 'input',
-            name: 'projectCredits',
-            message: 'Enter the creator(s), collaborators and/or contributors (Required)',
-            validate: creditsInput => {
-                if (creditsInput) {
-                    return true;
-                } else {
-                    console.log('Please enter the creator(s), collaborators and/or contributors!');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'input',
             name: 'contributionGuidelines',
-            message: 'Enter the scontribution guidelines',
+            message: 'Enter the contribution guidelines:',
             validate: contributionInput => {
                 if (contributionInput) {
                     return true;
@@ -118,11 +132,29 @@ const promptReadme = () => {
             }
         },
         {
+            type: 'input',
+            name: 'testInstructions',
+            message: 'Enter the instructions to test:',
+            validate: testInput => {
+                if (testInput) {
+                    return true;
+                } else {
+                    console.log('Please enter the instructions to test!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmLicense',
+            message: 'Would you like to include a License?',
+            default: true
+        },
+        {
             type: 'rawlist',
             name: 'license',
-            message: 'Choose a license',
-            choices: ['None'
-                     ,'Apache License 2.0'
+            message: 'Choose a license:',
+            choices: ['Apache License 2.0'
                      ,'GNU General Public License v3.0'
                      ,'MIT License'
                      ,'BSD 2-Clause "Simplified" License'
@@ -134,8 +166,15 @@ const promptReadme = () => {
                      ,'GNU General Public License v2.0'
                      ,'GNU Lesser General Public License v2.1'
                      ,'Mozilla Public License 2.0'
-                     ,'The Unlicense']
-        },
+                     ,'The Unlicense'],
+            when: ({ confirmLicense }) => {
+                if (confirmLicense) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
   ])
 };
 
@@ -144,7 +183,8 @@ const promptReadme = () => {
 
 // TODO: Create a function to initialize app
 //function init() {}
-promptReadme()
+promptPersonal()
+    .then(promptProject)
     .then(readmeAnswers => {
         return readmeTemplate(readmeAnswers);
     })
