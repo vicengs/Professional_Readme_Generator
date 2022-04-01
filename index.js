@@ -1,9 +1,9 @@
 /* ---------------------------- */
-/* Project  : Readme Grenerator */
+/* Project  : Readme Generator  */
 /* File     : index.js          */
 /* Author   : Vicente Garcia    */
 /* Date     : 03/31/2022        */
-/* Modified : 03/31/2022        */
+/* Modified : 04/01/2022        */
 /* ---------------------------- */
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
