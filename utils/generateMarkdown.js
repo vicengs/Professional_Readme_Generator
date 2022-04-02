@@ -24,11 +24,13 @@ module.exports = fileContent => {
             // If file was created well, send the successful message to the index method that called here to create file
             resolve({
                 ok: true,
-                message: `  =================================
+                message: `
+  =================================
   File README.md created!
   ---------------------------------
   Review distribution folder (dist)
-  =================================`
+  =================================
+  `
             });
         });
     });
