@@ -29,27 +29,23 @@ ${licenses}
 `;
 };
 
-const generateScreenshots = screenshots => {
+const generateScreenshots = (screenshots) => {
     if (!screenshots[0].image) {
       return '';
     }
     return `
 ## Screenshots
     ${screenshots
-      .filter(({ eachImage }) => eachImage)
+      .filter(({ confirmImage }) => confirmImage)
       .map(({ image }) => {
-        return `HOLA MUNDO ${image}`;
+        let altText = image;
+        altText = altText.substring(0,altText.indexOf("."));
+        return `
+![`+ altText +`](assets/images/${image})
+`;
       })
       .join('')
-    }
-    ${screenshots
-      .filter(({ eachImage }) => eachImage)
-      .map(({ image }) => {
-        return `HOLA MUNDO ${image}`;
-      })
-      .join('')
-    }
-    otro`;
+    }`;
 };
 
 module.exports = markdownData => {
