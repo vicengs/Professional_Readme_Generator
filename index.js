@@ -255,10 +255,6 @@ promptPersonal()
         return generateReadme(readmeData);
     })
     // Show message if successful process
-    .then(readmeFile => {
-        console.log(readmeFile.message);
-    })
+    .then(readmeFile => console.log(readmeFile.message))
     // Show message if error
-    .catch(err => {
-        console.log(err);
-    });
+    .catch(err => console.log(err));

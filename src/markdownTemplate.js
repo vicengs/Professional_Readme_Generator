@@ -16,16 +16,51 @@ function renderLicenseLink(license) {}
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
+// Create the about section
+const generateLicense = licenses => {
+    if (!licenses) {
+      return '';
+    }
+    return `
 
+## License
+
+${licenses}
+`;
+};
+
+const generateScreenshots = screenshots => {
+    if (!screenshots[0].image) {
+      return '';
+    }
+    return `
+## Screenshots
+    ${screenshots
+      .filter(({ eachImage }) => eachImage)
+      .map(({ image }) => {
+        return `HOLA MUNDO ${image}`;
+      })
+      .join('')
+    }
+    ${screenshots
+      .filter(({ eachImage }) => eachImage)
+      .map(({ image }) => {
+        return `HOLA MUNDO ${image}`;
+      })
+      .join('')
+    }
+    otro`;
+};
 
 module.exports = markdownData => {
     // Destructure page data by section
-    //const { name, github, projectName, projectDescription, installInstructions, usageInstructions, projectCredits, contributionGuidelines, license,  } = markdownData;
-    return `# ${markdownData.projectName}
+    const { name, github, email, images } = markdownData;
+    const { projectName, projectDescription, installInstructions, usageInstructions, contributionGuidelines, testInstructions, license } = markdownData.project[0];
+    return `# ${projectName}
   
 ## Description
   
-${markdownData.projectDescription}
+${projectDescription}
 
 
 ## Table of Contents
@@ -40,33 +75,38 @@ ${markdownData.projectDescription}
 
 ## Installation
 
-${markdownData.installInstructions}
+${installInstructions}
 
 
 ## Usage
 
-${markdownData.usageInstructions}
+${usageInstructions}
 
 
 ## Contributing
 
-${markdownData.contributionGuidelines}
+${contributionGuidelines}
 
 
 ## Tests
 
-${markdownData.contributionGuidelines}
+${testInstructions}
 
 
-## License
+## Credits
 
-${markdownData.license}
+Made by ${name}
 
 
 ## Questions
 
-${markdownData.github}
+### Github
 
-  
-    `;
+https://github.com/${github}
+
+### E-mail
+
+${email}
+${generateLicense(license)}
+${generateScreenshots(images)}`;
 };
