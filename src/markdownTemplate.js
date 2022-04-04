@@ -5,55 +5,69 @@
 /* Date     : 03/31/2022          */
 /* Modified : 04/01/2022          */
 /* ------------------------------ */
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-// Create the about section
-const generateLicense = licenses => {
-    if (!licenses) {
-      return '';
-    }
+const fetch = require('node-fetch');
+const addContent = (license, screenshoots) => {
+    if (license && screenshoots) {
+        return `* [License](#license)
+* [Screenshots](#screenshots)`;
+    }else if (license){
+        return "* [License](#license)";
+    }else if (screenshoots){
+        return "* [Screenshots](#screenshots)";
+    };
+    return "";
+};
+const getBadge = licenseName => { 
+    fetch("https://api.github.com/licenses")
+    .then((response) => {
+        return response.json();
+    })
+    .then((resp) => {
+        for (let i=0; i<resp.length; i++){
+            if (resp[i].name === licenseName){
+                console.log(resp[i].key);
+                return ` IMPRIMETE -> ${resp[i].key}`;
+                ;
+            };
+        };
+    })
+};
+const generateLicense = license => {
+    if (!license) {
+        return "";
+    };
+    let prueba = getBadge(license);
+    console.log(prueba); 
     return `
-
 ## License
 
-${licenses}
+${license}
 `;
 };
-
 const generateScreenshots = (screenshots) => {
     if (!screenshots[0].image) {
-      return '';
-    }
+        return "";
+    };
     return `
 ## Screenshots
     ${screenshots
-      .filter(({ confirmImage }) => confirmImage)
-      .map(({ image }) => {
-        let altText = image;
-        altText = altText.substring(0,altText.indexOf("."));
-        return `
-![`+ altText +`](assets/images/${image})
+        .filter(({ confirmImage }) => confirmImage)
+        .map(({ image }) => {
+            let altText = image;
+            altText = altText.substring(0,altText.indexOf("."));
+            return `
+![${altText}](assets/images/${image})
 `;
-      })
-      .join('')
+        })
+        .join("")
     }`;
 };
-
 module.exports = markdownData => {
     // Destructure page data by section
     const { name, github, email, images } = markdownData;
-    const { projectName, projectDescription, installInstructions, usageInstructions, contributionGuidelines, testInstructions, license } = markdownData.project[0];
+    const { projectName, projectDescription, installInstructions, usageInstructions, contributionGuidelines, testInstructions, confirmLicense, license } = markdownData.project[0];
     return `# ${projectName}
-  
+https://img.shields.io/badge/License-Hola%20Mundo-green
 ## Description
   
 ${projectDescription}
@@ -65,8 +79,9 @@ ${projectDescription}
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [Test](#test)
-* [License](#license)
+* [Credits](#credits)
 * [Questions](#questions)
+${addContent(confirmLicense,images[0].confirmImage)}
 
 
 ## Installation
@@ -102,7 +117,7 @@ https://github.com/${github}
 
 ### E-mail
 
-${email}
+For more questions contact me at ${email}
 ${generateLicense(license)}
 ${generateScreenshots(images)}`;
 };
