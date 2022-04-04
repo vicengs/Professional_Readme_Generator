@@ -1,10 +1,11 @@
-# zdsfxdc
-[![License](https://img.shields.io/badge/License-Apache_2.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
-[![License](https://img.shields.io/badge/License-Hola%20Mundo-green.svg)](http://choosealicense.com/licenses/mit/)
-[![License](https://img.shields.io/badge/License-Hola%20Mundo-green)](http://choosealicense.com/licenses/mit/)
+# edsf
+
+[![License](https://img.shields.io/badge/Apache License 2.0-informational.svg)](http://choosealicense.com/licenses/Apache License 2.0/)
+
+
 ## Description
   
-dsfxzc
+des
 
 
 ## Table of Contents
@@ -20,40 +21,41 @@ dsfxzc
 
 ## Installation
 
-dsxzfcd
+f
 
 
 ## Usage
 
-xdsxzc
+cde
 
 
 ## Contributing
 
-xdsxzd
+sf
 
 
 ## Tests
 
-dsfxzdc
+ds
 
 
 ## Credits
 
-Made by dsfdceds
+Made by dsfdx
 
 
 ## Questions
 
 ### Github
 
-https://github.com/dsfxcdds
+https://github.com/fdsfc
 
 ### E-mail
 
-For more questions contact me at dsfcdes
+For more questions contact me at dsfdcds@
+
 
 ## License
 
-MIT License
+Apache License 2.0 - [object Promise]
 

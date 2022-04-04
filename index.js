@@ -3,7 +3,7 @@
 /* File     : index.js          */
 /* Author   : Vicente Garcia    */
 /* Date     : 03/31/2022        */
-/* Modified : 04/01/2022        */
+/* Modified : 04/03/2022        */
 /* ---------------------------- */
 // Add access to inquirer functions & methods to use prompt
 const inquirer = require('inquirer');
@@ -38,6 +38,10 @@ const promptPersonal = () => {
             message: 'What is your e-mail?',
             validate: emailInput => {
                 if (emailInput) {
+                    if (emailInput.indexOf("@") < 0){
+                        console.log('@ <- Please enter a valid e-mail!');
+                        return false;
+                    }
                     return true;
                 } else {
                     console.log('Please enter a valid e-mail!');
@@ -157,18 +161,18 @@ const promptProject = readmeAnswers => {
             name: 'license',
             message: 'Choose a license:',
             choices: ['Apache License 2.0'
-                        ,'GNU General Public License v3.0'
-                        ,'MIT License'
-                        ,'BSD 2-Clause "Simplified" License'
-                        ,'BSD 3-Clause "New" or "Revised" License'
-                        ,'Boost Software License 1.0'
-                        ,'Creative Commons Zero v1.0 Universal'
-                        ,'Eclipse Public License 2.0'
-                        ,'GNU Affero General Public License v3.0'
-                        ,'GNU General Public License v2.0'
-                        ,'GNU Lesser General Public License v2.1'
-                        ,'Mozilla Public License 2.0'
-                        ,'The Unlicense'],
+                     ,'GNU General Public License v3.0'
+                     ,'MIT License'
+                     ,'BSD 2-Clause "Simplified" License'
+                     ,'BSD 3-Clause "New" or "Revised" License'
+                     ,'Boost Software License 1.0'
+                     ,'Creative Commons Zero v1.0 Universal'
+                     ,'Eclipse Public License 2.0'
+                     ,'GNU Affero General Public License v3.0'
+                     ,'GNU General Public License v2.0'
+                     ,'GNU Lesser General Public License v2.1'
+                     ,'Mozilla Public License 2.0'
+                     ,'The Unlicense'],
             when: ({ confirmLicense }) => {
                 if (confirmLicense) {
                     return true;

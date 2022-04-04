@@ -5,19 +5,32 @@
 /* Date     : 03/31/2022          */
 /* Modified : 04/01/2022          */
 /* ------------------------------ */
+var miVariable;
 const fetch = require('node-fetch');
+const generateBadge = license => {
+    if (!license){
+      return "";
+    }
+    return `[![License](https://img.shields.io/badge/${license}-informational.svg)](http://choosealicense.com/licenses/${license}/)
+
+`;
+};
 const addContent = (license, screenshoots) => {
     if (license && screenshoots) {
         return `* [License](#license)
-* [Screenshots](#screenshots)`;
+* [Screenshots](#screenshots)
+`;
     }else if (license){
-        return "* [License](#license)";
+        return `* [License](#license)
+`;
     }else if (screenshoots){
-        return "* [Screenshots](#screenshots)";
+        return `* [Screenshots](#screenshots)
+`;
     };
     return "";
 };
 const getBadge = licenseName => { 
+  return new Promise((resolve, reject) => {
     fetch("https://api.github.com/licenses")
     .then((response) => {
         return response.json();
@@ -25,23 +38,39 @@ const getBadge = licenseName => {
     .then((resp) => {
         for (let i=0; i<resp.length; i++){
             if (resp[i].name === licenseName){
-                console.log(resp[i].key);
-                return ` IMPRIMETE -> ${resp[i].key}`;
-                ;
+                fetch(`https://api.github.com/licenses/${resp[i].key}`)
+                .then((respuesta) => {
+                    return respuesta.json();
+                })
+                .then((respu) => {
+                    if (1 === 2){
+                      reject(respu);
+                      // Return out of the function to avoid execute the resolve() function as well
+                      return;
+                    }
+                    resolve({
+                      ok: true,
+                      message: `HOLA -> ${respu.description}`
+                    }); //DSFCDXFC
+                });
+                //return ` IMPRIMETE -> ${resp[i].key}`;
+                //;
             };
         };
     })
+  });//DSFDSFD
 };
 const generateLicense = license => {
     if (!license) {
         return "";
     };
-    let prueba = getBadge(license);
-    console.log(prueba); 
+    getBadge(license).then((dato) => console.log(dato));
+    console.log("AQUI SE PIERDE OTRA VEZ -> ")
     return `
+
 ## License
 
-${license}
+${license} - ${getBadge(license).then((dato) => {return "dato"})}
 `;
 };
 const generateScreenshots = (screenshots) => {
@@ -56,8 +85,7 @@ const generateScreenshots = (screenshots) => {
             let altText = image;
             altText = altText.substring(0,altText.indexOf("."));
             return `
-![${altText}](assets/images/${image})
-`;
+![${altText}](assets/images/${image})`;
         })
         .join("")
     }`;
@@ -67,9 +95,8 @@ module.exports = markdownData => {
     const { name, github, email, images } = markdownData;
     const { projectName, projectDescription, installInstructions, usageInstructions, contributionGuidelines, testInstructions, confirmLicense, license } = markdownData.project[0];
     return `# ${projectName}
-[![License](https://img.shields.io/badge/License-Apache_2.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
-[![License](https://img.shields.io/badge/License-Hola%20Mundo-green.svg)](http://choosealicense.com/licenses/mit/)
-[![License](https://img.shields.io/badge/License-Hola%20Mundo-green)](http://choosealicense.com/licenses/mit/)
+
+${generateBadge(license)}
 ## Description
   
 ${projectDescription}
@@ -84,7 +111,6 @@ ${projectDescription}
 * [Credits](#credits)
 * [Questions](#questions)
 ${addContent(confirmLicense,images[0].confirmImage)}
-
 
 ## Installation
 
