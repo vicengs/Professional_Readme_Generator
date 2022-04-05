@@ -1,11 +1,11 @@
-# Professional README generator
+# Professional
 
-[![License](https://img.shields.io/static/v1?label=License&message=BSD-2-Clause&color=green)](http://choosealicense.com/licenses/bsd-2-clause/)
+[![License](https://img.shields.io/static/v1?label=License&message=MPL-2.0&color=green)](http://choosealicense.com/licenses/mpl-2.0/)
 
 
 ## Description
   
-DSFGCDG
+dsfredsf
 
 
 ## Table of Contents
@@ -22,22 +22,22 @@ DSFGCDG
 
 ## Installation
 
-FDGCVFDGC
+fdsgfedsf
 
 
 ## Usage
 
-FDGCVFDCXGV
+fdsfgeds
 
 
 ## Contributing
 
-FDGCVFDGC
+ffdsfgeds
 
 
 ## Tests
 
-FDGCVFDGF
+fdsfcfeds
 
 
 ## Credits
@@ -58,12 +58,14 @@ For more questions contact me at vicen1@hotmail.com
 
 ## License
 
-BSD 2-Clause "Simplified" License - A permissive license that comes in two variants, the <a href="/licenses/bsd-2-clause/">BSD 2-Clause</a> and <a href="/licenses/bsd-3-clause/">BSD 3-Clause</a>. Both have very minute differences to the MIT license.
+Mozilla Public License 2.0 - Permissions of this weak copyleft license are conditioned on making available source code of licensed files and modifications of those files under the same license (or in certain cases, one of the GNU licenses). Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. However, a larger work using the licensed work may be distributed under different terms and without source code for files added in the larger work.
 
 
 ## Screenshots
     
-![image1](https://github.com/vicengs/Professional_Readme_Generator/blob/main/assets/images/image1.jpg)
-![image2](https://github.com/vicengs/Professional_Readme_Generator/blob/main/assets/images/image2.jpg)
-![image3](https://github.com/vicengs/Professional_Readme_Generator/blob/main/assets/images/image3.jpg)
-![image4](https://github.com/vicengs/Professional_Readme_Generator/blob/main/assets/images/image4.jpg)
+![image1](/assets/images/image1.jpg)
+![image2](/assets/images/image2.jpg)
+![image3](/assets/images/image3.jpg)
+![image4](/assets/images/image4.jpg)
+![image5](/assets/images/image5.jpg)
+![image6](/assets/images/image6.jpg)
