@@ -47,13 +47,13 @@ Made by Vicente Garcia Sepulveda
 
 ## Questions
 
-  #### Github
+    - Github
 
-  https://github.com/vicengs
+    https://github.com/vicengs
 
-  #### E-mail
+    - E-mail
 
-  For more questions contact me at vicen1@hotmail.com
+    For more questions contact me at vicen1@hotmail.com
 
 
 ## License
