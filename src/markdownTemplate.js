@@ -5,7 +5,9 @@
 /* Date     : 03/31/2022          */
 /* Modified : 04/04/2022          */
 /* ------------------------------ */
+// Add access to node-fetch to manage API's
 const fetch = require('node-fetch');
+// Function to generate Badge
 const generateBadge = ( id, key ) => {
     if (!key){
       return "";
@@ -14,6 +16,7 @@ const generateBadge = ( id, key ) => {
 
 `;
 };
+// Function to add elements (license and/or screenshots) to table of contents
 const addContent = (license, screenshoots) => {
     if (license && screenshoots) {
         return `* [License](#license)
@@ -39,7 +42,7 @@ const generateLicense = (license, description) => {
 ${license} - ${description}
 `;
 };
-const generateScreenshots = (screenshots) => {
+const generateScreenshots = (screenshots, github, repository) => {
     if (!screenshots[0].image) {
         return "";
     };
@@ -51,7 +54,7 @@ const generateScreenshots = (screenshots) => {
             let altText = image;
             altText = altText.substring(0,altText.indexOf("."));
             return `
-![${altText}](assets/images/${image})`;
+![${altText}](https://github.com/${github}/${repository}/blob/main/assets/images/${image})`;
         })
         .join("")
     }`;
@@ -59,7 +62,7 @@ const generateScreenshots = (screenshots) => {
 module.exports = async markdownData => {
 //const funcioncita = async markdownData =>{
     // Destructure page data by section
-    const { name, github, email, images } = markdownData;
+    const { name, github, email, repository, images } = markdownData;
     const { projectName, projectDescription, installInstructions, usageInstructions, contributionGuidelines, testInstructions, confirmLicense, license } = markdownData.project[0];
     let key;
     let id;
@@ -132,5 +135,5 @@ https://github.com/${github}
 
 For more questions contact me at ${email}
 ${generateLicense(license, description)}
-${generateScreenshots(images)}`;
+${generateScreenshots(images, github, repository)}`;
 };

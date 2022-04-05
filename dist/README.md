@@ -1,11 +1,11 @@
-# Profressional Readme Generator
+# Professional README generator
 
-[![License](https://img.shields.io/static/v1?label=License&message=Apache-2.0&color=green)](http://choosealicense.com/licenses/apache-2.0/)
+[![License](https://img.shields.io/static/v1?label=License&message=BSD-2-Clause&color=green)](http://choosealicense.com/licenses/bsd-2-clause/)
 
 
 ## Description
   
-Project to generate dinamically a README.md thus prompts
+DSFGCDG
 
 
 ## Table of Contents
@@ -22,22 +22,22 @@ Project to generate dinamically a README.md thus prompts
 
 ## Installation
 
-Clone repository
+FDGCVFDGC
 
 
 ## Usage
 
-Excetute node index
+FDGCVFDCXGV
 
 
 ## Contributing
 
-No copy
+FDGCVFDGC
 
 
 ## Tests
 
-Try to put a invalid email
+FDGCVFDGF
 
 
 ## Credits
@@ -58,13 +58,12 @@ For more questions contact me at vicen1@hotmail.com
 
 ## License
 
-Apache License 2.0 - A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
+BSD 2-Clause "Simplified" License - A permissive license that comes in two variants, the <a href="/licenses/bsd-2-clause/">BSD 2-Clause</a> and <a href="/licenses/bsd-3-clause/">BSD 3-Clause</a>. Both have very minute differences to the MIT license.
 
 
 ## Screenshots
     
-![image1](assets/images/image1.jpg)
-![image2](assets/images/image2.jpg)
-![image3](assets/images/image3.jpg)
-![image4](assets/images/image4.jpg)
-![image5](assets/images/image5.jpg)
+![image1](https://github.com/vicengs/Professional_Readme_Generator/blob/main/assets/images/image1.jpg)
+![image2](https://github.com/vicengs/Professional_Readme_Generator/blob/main/assets/images/image2.jpg)
+![image3](https://github.com/vicengs/Professional_Readme_Generator/blob/main/assets/images/image3.jpg)
+![image4](https://github.com/vicengs/Professional_Readme_Generator/blob/main/assets/images/image4.jpg)
