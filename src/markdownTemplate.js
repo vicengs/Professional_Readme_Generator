@@ -3,7 +3,7 @@
 /* File     : markdownTemplate.js */
 /* Author   : Vicente Garcia      */
 /* Date     : 03/31/2022          */
-/* Modified : 04/04/2022          */
+/* Modified : 04/05/2022          */
 /* ------------------------------ */
 // Add access to node-fetch to manage API's
 const fetch = require('node-fetch');
