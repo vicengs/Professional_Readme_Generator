@@ -95,7 +95,7 @@ module.exports = async markdownData => {
     // Return README template
     return `# ${projectName}
 
-${generateBadge(id, key)}
+[![Github](https://img.shields.io/static/v1?label=Github&message=${github}&color=yellow)](https://github.com/${github}) ${generateBadge(id, key)}
 ## Description
   
 ${projectDescription}
