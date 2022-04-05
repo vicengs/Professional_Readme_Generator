@@ -53,6 +53,10 @@ Made by Vicente Garcia Sepulveda
 
 - https://github.com/vicengs/Professional_readme_generator
 
+### Walkthrough Video
+
+- https://drive.google.com/file/d/19bQfXScQcckPXbB2MXs6G7P_ybj0W5s8/view
+
 #### SSH to clone:
 
     git@github.com:vicengs/Professional_readme_generator.git
