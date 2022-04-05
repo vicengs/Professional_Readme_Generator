@@ -23,31 +23,25 @@ Command-line application that dynamically generates a professional README.md fil
 * [License](#license)
 * [Screenshots](#screenshots)
 
-
 ## Installation
 
 Clone repository to local machine.
-
 
 ## Usage
 
 Execute in command-line the instruction "node index"
 
-
 ## Contributing
 
 In short, when you submit code changes, your submissions are understood to be under the same License that covers the project. Feel free to contact the maintainers if that's a concern.
-
 
 ## Tests
 
 Check empty prompts validation and email validation.
 
-
 ## Credits
 
 Made by Vicente Garcia Sepulveda
-
 
 ## Questions
 
@@ -55,11 +49,11 @@ Made by Vicente Garcia Sepulveda
   
 - https://github.com/vicengs
 
-### Github repository
+#### Github repository
 
 - https://github.com/vicengs/Professional_readme_generator
 
-### SSH to clone:
+#### SSH to clone:
 
     git@github.com:vicengs/Professional_readme_generator.git
   
@@ -67,11 +61,9 @@ Made by Vicente Garcia Sepulveda
   
 - For more questions contact me at vicen1@hotmail.com
 
-
 ## License
 
 MIT License - A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
-
 
 ## Screenshots
     
