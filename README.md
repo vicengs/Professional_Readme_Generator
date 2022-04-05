@@ -2,11 +2,15 @@
 
 [![Github](https://img.shields.io/static/v1?label=Github&message=vicengs&color=yellow)](https://github.com/vicengs) [![Email](https://img.shields.io/static/v1?label=Email&message=Vicente&color=informational)](mailto:vicen1@hotmail.com) [![License](https://img.shields.io/static/v1?label=License&message=MIT&color=green)](http://choosealicense.com/licenses/mit/)
 
-
 ## Description
   
 Command-line application that dynamically generates a professional README.md file from a user's input using the Inquirer package.
 
+## Built with
+
+- Node.js
+- JavaScript
+- Third-Party API's
 
 ## Table of Contents
 
@@ -50,6 +54,14 @@ Made by Vicente Garcia Sepulveda
 #### Github
   
 - https://github.com/vicengs
+
+### Github repository
+
+- https://github.com/vicengs/Professional_readme_generator
+
+### SSH to clone:
+
+    git@github.com:vicengs/Professional_readme_generator.git
   
 #### E-mail
   
