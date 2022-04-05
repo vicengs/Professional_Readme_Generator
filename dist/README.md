@@ -1,11 +1,11 @@
-# Professional README generator
+# Professional Readme Generator
 
-[![License](https://img.shields.io/static/v1?label=License&message=BSD-2-Clause&color=green)](http://choosealicense.com/licenses/bsd-2-clause/)
+[![License](https://img.shields.io/static/v1?label=License&message=MIT&color=green)](http://choosealicense.com/licenses/mit/)
 
 
 ## Description
   
-DSFGCDG
+Generate a README file dinamically thus prompts in command line
 
 
 ## Table of Contents
@@ -13,7 +13,7 @@ DSFGCDG
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
-* [Test](#test)
+* [Tests](#tests)
 * [Credits](#credits)
 * [Questions](#questions)
 * [License](#license)
@@ -22,27 +22,27 @@ DSFGCDG
 
 ## Installation
 
-FDGCVFDGC
+Clone repository
 
 
 ## Usage
 
-FDGCVFDCXGV
+Execute node index
 
 
 ## Contributing
 
-FDGCVFDGC
+Contribution is accepted and the license terms will be follow
 
 
 ## Tests
 
-FDGCVFDGF
+Validate no null values in prompt, and validate a valid email.
 
 
 ## Credits
 
-Made by Vicente Garcia
+Made by Vicente Garcia Sepulveda
 
 
 ## Questions
@@ -58,12 +58,12 @@ For more questions contact me at vicen1@hotmail.com
 
 ## License
 
-BSD 2-Clause "Simplified" License - A permissive license that comes in two variants, the <a href="/licenses/bsd-2-clause/">BSD 2-Clause</a> and <a href="/licenses/bsd-3-clause/">BSD 3-Clause</a>. Both have very minute differences to the MIT license.
+MIT License - A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
 
 ## Screenshots
     
-![image1](assets/images/image1.jpg)
+![image1](/assets/images/image1.jpg)
 ![image2](/assets/images/image2.jpg)
-![image3](./assets/images/image3.jpg)
-![image4](../assets/images/image4.jpg)
+![image3](/assets/images/image3.jpg)
+![image4](/assets/images/image4.jpg)

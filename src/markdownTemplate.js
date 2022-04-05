@@ -17,20 +17,21 @@ const generateBadge = ( id, key ) => {
 `;
 };
 // Function to add elements (license and/or screenshots) to table of contents
-const addContent = (license, screenshoots) => {
-    if (license && screenshoots) {
+const addContent = (license, screenshots) => {
+    if (license && screenshots) {
         return `* [License](#license)
 * [Screenshots](#screenshots)
 `;
     }else if (license){
         return `* [License](#license)
 `;
-    }else if (screenshoots){
+    }else if (screenshots){
         return `* [Screenshots](#screenshots)
 `;
     };
     return "";
 };
+// Funtion to generate license section
 const generateLicense = (license, description) => {
     if (!license) {
         return "";
@@ -42,7 +43,8 @@ const generateLicense = (license, description) => {
 ${license} - ${description}
 `;
 };
-const generateScreenshots = (screenshots, github, repository) => {
+// Funtion to generate screenshots section
+const generateScreenshots = (screenshots) => {
     if (!screenshots[0].image) {
         return "";
     };
@@ -54,34 +56,43 @@ const generateScreenshots = (screenshots, github, repository) => {
             let altText = image;
             altText = altText.substring(0,altText.indexOf("."));
             return `
-![${altText}](https://github.com/${github}/${repository}/blob/main/assets/images/${image})`;
+![${altText}](/assets/images/${image})`;
         })
         .join("")
     }`;
 };
+// Principal exported async function to avoid continue if API is not resolve
 module.exports = async markdownData => {
 //const funcioncita = async markdownData =>{
     // Destructure page data by section
     const { name, github, email, repository, images } = markdownData;
     const { projectName, projectDescription, installInstructions, usageInstructions, contributionGuidelines, testInstructions, confirmLicense, license } = markdownData.project[0];
+    // Declare variables to storage API license values
     let key;
     let id;
     let description;
+    // The API is called just if user choose license
     if (license){
-        const api = await fetch("https://api.github.com/licenses");
-        const r1 = await api.clone();
-        const results = await Promise.all([api.json()]);
-        for (let i=0; i<results[0].length; i++){
-            if (license === results[0][i].name){
-                const api1 = await fetch("https://api.github.com/licenses/"+results[0][i].key);
-                const r12 = await api1.clone();
-                const results3 = await Promise.all([api1.json()]);
-                key = results3[0].key;
-                id = results3[0].spdx_id;
-                description = results3[0].description;
+        // Call API and storage in licenses API url
+        const licensesApiUrl = await fetch("https://api.github.com/licenses");
+        // Convert licenses result to json to manipulate
+        const licensesApi = await Promise.all([licensesApiUrl.json()]);
+        // Loop to all licenses
+        for (let i=0; i<licensesApi[0].length; i++){
+            // Compare license name with values in array if is equal get API with specific license
+            if (license === licensesApi[0][i].name){
+                // Call API and storage in license API url
+                const licenseApiUrl = await fetch("https://api.github.com/licenses/"+licensesApi[0][i].key);
+                // Convert license result to json to manipulate
+                const licenceApi = await Promise.all([licenseApiUrl.json()]);
+                // Assign values of API array to variables
+                key = licenceApi[0].key;
+                id = licenceApi[0].spdx_id;
+                description = licenceApi[0].description;
             };
         };
     };
+    // Return README template
     return `# ${projectName}
 
 ${generateBadge(id, key)}
@@ -95,7 +106,7 @@ ${projectDescription}
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
-* [Test](#test)
+* [Tests](#tests)
 * [Credits](#credits)
 * [Questions](#questions)
 ${addContent(confirmLicense,images[0].confirmImage)}
@@ -135,5 +146,5 @@ https://github.com/${github}
 
 For more questions contact me at ${email}
 ${generateLicense(license, description)}
-${generateScreenshots(images, github, repository)}`;
+${generateScreenshots(images)}`;
 };
