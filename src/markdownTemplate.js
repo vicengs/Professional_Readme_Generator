@@ -106,7 +106,7 @@ ${projectDescription}
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
-* [Test](#tests)
+* [Tests](#tests)
 * [Credits](#credits)
 * [Questions](#questions)
 ${addContent(confirmLicense,images[0].confirmImage)}

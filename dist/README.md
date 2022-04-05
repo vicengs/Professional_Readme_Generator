@@ -13,7 +13,7 @@ Generate a README file dinamically thus prompts in command line
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
-* [Test](#test)
+* [Tests](#tests)
 * [Credits](#credits)
 * [Questions](#questions)
 * [License](#license)
