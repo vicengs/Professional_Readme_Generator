@@ -1,11 +1,11 @@
-# Professional
+# Professional Readme Generator
 
-[![License](https://img.shields.io/static/v1?label=License&message=MPL-2.0&color=green)](http://choosealicense.com/licenses/mpl-2.0/)
+[![License](https://img.shields.io/static/v1?label=License&message=MIT&color=green)](http://choosealicense.com/licenses/mit/)
 
 
 ## Description
   
-dsfredsf
+Generate a README file dinamically thus prompts in command line
 
 
 ## Table of Contents
@@ -22,27 +22,27 @@ dsfredsf
 
 ## Installation
 
-fdsgfedsf
+Clone repository
 
 
 ## Usage
 
-fdsfgeds
+Execute node index
 
 
 ## Contributing
 
-ffdsfgeds
+Contribution is accepted and the license terms will be follow
 
 
 ## Tests
 
-fdsfcfeds
+Validate no null values in prompt, and validate a valid email.
 
 
 ## Credits
 
-Made by Vicente Garcia
+Made by Vicente Garcia Sepulveda
 
 
 ## Questions
@@ -58,7 +58,7 @@ For more questions contact me at vicen1@hotmail.com
 
 ## License
 
-Mozilla Public License 2.0 - Permissions of this weak copyleft license are conditioned on making available source code of licensed files and modifications of those files under the same license (or in certain cases, one of the GNU licenses). Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. However, a larger work using the licensed work may be distributed under different terms and without source code for files added in the larger work.
+MIT License - A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
 
 ## Screenshots
@@ -67,5 +67,3 @@ Mozilla Public License 2.0 - Permissions of this weak copyleft license are condi
 ![image2](/assets/images/image2.jpg)
 ![image3](/assets/images/image3.jpg)
 ![image4](/assets/images/image4.jpg)
-![image5](/assets/images/image5.jpg)
-![image6](/assets/images/image6.jpg)
