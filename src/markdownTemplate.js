@@ -3,15 +3,14 @@
 /* File     : markdownTemplate.js */
 /* Author   : Vicente Garcia      */
 /* Date     : 03/31/2022          */
-/* Modified : 04/01/2022          */
+/* Modified : 04/04/2022          */
 /* ------------------------------ */
-var miVariable;
 const fetch = require('node-fetch');
-const generateBadge = license => {
-    if (!license){
+const generateBadge = ( id, key ) => {
+    if (!key){
       return "";
     }
-    return `[![License](https://img.shields.io/badge/${license}-informational.svg)](http://choosealicense.com/licenses/${license}/)
+    return `[![License](https://img.shields.io/static/v1?label=License&message=${id}&color=green)](http://choosealicense.com/licenses/${key}/)
 
 `;
 };
@@ -29,48 +28,15 @@ const addContent = (license, screenshoots) => {
     };
     return "";
 };
-const getBadge = licenseName => { 
-  return new Promise((resolve, reject) => {
-    fetch("https://api.github.com/licenses")
-    .then((response) => {
-        return response.json();
-    })
-    .then((resp) => {
-        for (let i=0; i<resp.length; i++){
-            if (resp[i].name === licenseName){
-                fetch(`https://api.github.com/licenses/${resp[i].key}`)
-                .then((respuesta) => {
-                    return respuesta.json();
-                })
-                .then((respu) => {
-                    if (1 === 2){
-                      reject(respu);
-                      // Return out of the function to avoid execute the resolve() function as well
-                      return;
-                    }
-                    resolve({
-                      ok: true,
-                      message: `HOLA -> ${respu.description}`
-                    }); //DSFCDXFC
-                });
-                //return ` IMPRIMETE -> ${resp[i].key}`;
-                //;
-            };
-        };
-    })
-  });//DSFDSFD
-};
-const generateLicense = license => {
+const generateLicense = (license, description) => {
     if (!license) {
         return "";
     };
-    getBadge(license).then((dato) => console.log(dato));
-    console.log("AQUI SE PIERDE OTRA VEZ -> ")
     return `
 
 ## License
 
-${license} - ${getBadge(license).then((dato) => {return "dato"})}
+${license} - ${description}
 `;
 };
 const generateScreenshots = (screenshots) => {
@@ -90,13 +56,32 @@ const generateScreenshots = (screenshots) => {
         .join("")
     }`;
 };
-module.exports = markdownData => {
+module.exports = async markdownData => {
+//const funcioncita = async markdownData =>{
     // Destructure page data by section
     const { name, github, email, images } = markdownData;
     const { projectName, projectDescription, installInstructions, usageInstructions, contributionGuidelines, testInstructions, confirmLicense, license } = markdownData.project[0];
+    let key;
+    let id;
+    let description;
+    if (license){
+        const api = await fetch("https://api.github.com/licenses");
+        const r1 = await api.clone();
+        const results = await Promise.all([api.json()]);
+        for (let i=0; i<results[0].length; i++){
+            if (license === results[0][i].name){
+                const api1 = await fetch("https://api.github.com/licenses/"+results[0][i].key);
+                const r12 = await api1.clone();
+                const results3 = await Promise.all([api1.json()]);
+                key = results3[0].key;
+                id = results3[0].spdx_id;
+                description = results3[0].description;
+            };
+        };
+    };
     return `# ${projectName}
 
-${generateBadge(license)}
+${generateBadge(id, key)}
 ## Description
   
 ${projectDescription}
@@ -146,6 +131,6 @@ https://github.com/${github}
 ### E-mail
 
 For more questions contact me at ${email}
-${generateLicense(license)}
+${generateLicense(license, description)}
 ${generateScreenshots(images)}`;
 };
