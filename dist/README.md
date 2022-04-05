@@ -49,7 +49,7 @@ Made by Vicente Garcia Sepulveda
 
 #### Github
 
-    https://github.com/vicengs
+- https://github.com/vicengs
 
 #### E-mail
 
