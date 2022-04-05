@@ -1,6 +1,6 @@
 # edsf
 
-[![License](https://img.shields.io/badge/ApacheLicense2.0-informational)](http://choosealicense.com/licenses/Apache License 2.0/)
+[![License](https://img.shields.io/badge/ApacheLicense2.0-informational)](http://choosealicense.com/licenses/bsl-1.0/)
 
 
 ## Description
