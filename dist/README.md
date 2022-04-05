@@ -63,7 +63,7 @@ BSD 2-Clause "Simplified" License - A permissive license that comes in two varia
 
 ## Screenshots
     
-![image1](https://github.com/vicengs/Professional_Readme_Generator/blob/main/assets/images/image1.jpg)
+![image1](assets/images/image1.jpg)
 ![image2](/assets/images/image2.jpg)
 ![image3](./assets/images/image3.jpg)
 ![image4](../assets/images/image4.jpg)
