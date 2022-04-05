@@ -1,11 +1,11 @@
-# fdsfc
+# Professional Readme Generator
 
-[![Github](https://img.shields.io/static/v1?label=Github&message=vicengs&color=yellow)](https://github.com/vicengs) [![License](https://img.shields.io/static/v1?label=License&message=BSD-3-Clause&color=green)](http://choosealicense.com/licenses/bsd-3-clause/)
+[![Github](https://img.shields.io/static/v1?label=Github&message=vicengs&color=yellow)](https://github.com/vicengs) [![License](https://img.shields.io/static/v1?label=License&message=Apache-2.0&color=green)](http://choosealicense.com/licenses/apache-2.0/)
 
 
 ## Description
   
-dfsf
+Generate dinamically a readme file
 
 
 ## Table of Contents
@@ -17,45 +17,51 @@ dfsf
 * [Credits](#credits)
 * [Questions](#questions)
 * [License](#license)
+* [Screenshots](#screenshots)
 
 
 ## Installation
 
-cdsfx
+Clone the project in your local machina
 
 
 ## Usage
 
-cdsfx
+Execute in the command line the following command "node index"
 
 
 ## Contributing
 
-dsfxc
+The code is open to share and improvements
 
 
 ## Tests
 
-dsfx
+Check the prompts are validated to avoid empty responses, and email prompt validates a valid email thus the @ use
 
 
 ## Credits
 
-Made by Vicente
+Made by Vicente Garcia Sepulveda
 
 
 ## Questions
 
-### Github
+ ### Github
 
-https://github.com/vicengs
+ https://github.com/vicengs
 
-### E-mail
+ ### E-mail
 
-For more questions contact me at vicen1@hotmail.com
+ For more questions contact me at vicen1@hotmail.com
 
 
 ## License
 
-BSD 3-Clause "New" or "Revised" License - A permissive license similar to the <a href="/licenses/bsd-2-clause/">BSD 2-Clause License</a>, but with a 3rd clause that prohibits others from using the name of the project or its contributors to promote derived products without written consent.
+Apache License 2.0 - A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
+
+## Screenshots
+    
+![image1](/assets/images/image1.jpg)
+![image2](/assets/images/image2.jpg)

@@ -138,13 +138,13 @@ Made by ${name}
 
 ## Questions
 
-### Github
+ ### Github
 
-https://github.com/${github}
+ https://github.com/${github}
 
-### E-mail
+ ### E-mail
 
-For more questions contact me at ${email}
+ For more questions contact me at ${email}
 ${generateLicense(license, description)}
 ${generateScreenshots(images)}`;
 };
