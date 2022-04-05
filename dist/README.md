@@ -1,8 +1,6 @@
 # Professional Readme Generator
 
-[![Github](https://img.shields.io/static/v1?label=Github&message=vicengs&color=yellow)](https://github.com/vicengs) [![Email](https://img.shields.io/static/v1?label=Email&message=Vicente&color=informational)](mailto:vicen1@hotmail.com) [![License](https://img.shields.io/static/v1?label=License&message=Apache-2.0&color=green)](http://choosealicense.com/licenses/apache-2.0/)
-
-
+[![Github](https://img.shields.io/static/v1?label=Github&message=vicengs&color=yellow)](https://github.com/vicengs) [![Email](https://img.shields.io/static/v1?label=Email&message=Vicente&color=informational)](mailto:vicen1@hotmail.com) 
 ## Description
   
 Command-line application that dynamically generates a professional README.md file from a user's input using the Inquirer package.
@@ -16,7 +14,6 @@ Command-line application that dynamically generates a professional README.md fil
 * [Tests](#tests)
 * [Credits](#credits)
 * [Questions](#questions)
-* [License](#license)
 * [Screenshots](#screenshots)
 
 
@@ -56,11 +53,6 @@ Made by Vicente Garcia Sepulveda
 - For more questions contact me at vicen1@hotmail.com
 
 
-## License
-
-Apache License 2.0 - A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
-
-
 ## Screenshots
     
-![image3](/assets/images/image3.jpg)
+![image2](/assets/images/image2.jpg)
