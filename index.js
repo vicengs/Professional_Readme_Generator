@@ -61,19 +61,6 @@ const promptPersonal = () => {
                     return false;
                 }
             }
-        },
-        {
-            type: 'input',
-            name: 'repository',
-            message: 'Enter the repository name:',
-            validate: repositoryInput => {
-                if (repositoryInput) {
-                    return true;
-                } else {
-                    console.log('Please enter the repository name!');
-                    return false;
-                }
-            }
         }
     ])
 };

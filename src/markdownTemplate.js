@@ -42,7 +42,7 @@ const generateLicense = (license, description) => {
 ${license} - ${description}
 `;
 };
-const generateScreenshots = (screenshots, github, repository) => {
+const generateScreenshots = (screenshots) => {
     if (!screenshots[0].image) {
         return "";
     };
@@ -54,7 +54,7 @@ const generateScreenshots = (screenshots, github, repository) => {
             let altText = image;
             altText = altText.substring(0,altText.indexOf("."));
             return `
-![${altText}](https://github.com/${github}/${repository}/blob/main/assets/images/${image})`;
+![${altText}](/assets/images/${image})`;
         })
         .join("")
     }`;
@@ -135,5 +135,5 @@ https://github.com/${github}
 
 For more questions contact me at ${email}
 ${generateLicense(license, description)}
-${generateScreenshots(images, github, repository)}`;
+${generateScreenshots(images)}`;
 };
