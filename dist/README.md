@@ -1,11 +1,9 @@
-# Professional Readme Generator
+# dsxfcd
 
-[![License](https://img.shields.io/static/v1?label=License&message=MIT&color=green)](http://choosealicense.com/licenses/mit/)
-
-
+[![Github](https://img.shields.io/static/v1?label=Github&message=vicengs&color=yellow)](https://github.com/vicengs) 
 ## Description
   
-Generate a README file dinamically thus prompts in command line
+dsfxc
 
 
 ## Table of Contents
@@ -16,33 +14,31 @@ Generate a README file dinamically thus prompts in command line
 * [Tests](#tests)
 * [Credits](#credits)
 * [Questions](#questions)
-* [License](#license)
-* [Screenshots](#screenshots)
 
 
 ## Installation
 
-Clone repository
+dsfxcd
 
 
 ## Usage
 
-Execute node index
+dsfxc
 
 
 ## Contributing
 
-Contribution is accepted and the license terms will be follow
+dsfxdc
 
 
 ## Tests
 
-Validate no null values in prompt, and validate a valid email.
+dsxfc
 
 
 ## Credits
 
-Made by Vicente Garcia Sepulveda
+Made by Vicente Garcia
 
 
 ## Questions
@@ -55,15 +51,3 @@ https://github.com/vicengs
 
 For more questions contact me at vicen1@hotmail.com
 
-
-## License
-
-MIT License - A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
-
-
-## Screenshots
-    
-![image1](/assets/images/image1.jpg)
-![image2](/assets/images/image2.jpg)
-![image3](/assets/images/image3.jpg)
-![image4](/assets/images/image4.jpg)
