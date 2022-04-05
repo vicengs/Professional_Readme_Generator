@@ -1,11 +1,11 @@
 # Professional Readme Generator
 
-[![Github](https://img.shields.io/static/v1?label=Github&message=vicengs&color=yellow)](https://github.com/vicengs) [![Email](https://img.shields.io/static/v1?label=Email&message=Vicente Garcia Sepulveda&color=informational)](mailto:vicen1@hotmail.com) [![License](https://img.shields.io/static/v1?label=License&message=BSD-2-Clause&color=green)](http://choosealicense.com/licenses/bsd-2-clause/)
+[![Github](https://img.shields.io/static/v1?label=Github&message=vicengs&color=yellow)](https://github.com/vicengs) [![Email](https://img.shields.io/static/v1?label=Email&message=Vicente%Garcia%Sepulveda&color=informational)](mailto:vicen1@hotmail.com) [![License](https://img.shields.io/static/v1?label=License&message=MIT&color=green)](http://choosealicense.com/licenses/mit/)
 
 
 ## Description
   
-command-line application that dynamically generates a professional README.md file from a user's input using the Inquirer package.
+Command-line application that dynamically generates a professional README.md file from a user's input using the Inquirer package.
 
 
 ## Table of Contents
@@ -37,7 +37,7 @@ In short, when you submit code changes, your submissions are understood to be un
 
 ## Tests
 
-Check empty prompts validation and email valid
+Check empty prompts validation and email validation
 
 
 ## Credits
@@ -58,7 +58,7 @@ Made by Vicente Garcia Sepulveda
 
 ## License
 
-BSD 2-Clause "Simplified" License - A permissive license that comes in two variants, the <a href="/licenses/bsd-2-clause/">BSD 2-Clause</a> and <a href="/licenses/bsd-3-clause/">BSD 3-Clause</a>. Both have very minute differences to the MIT license.
+MIT License - A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
 
 ## Screenshots
