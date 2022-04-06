@@ -72,4 +72,4 @@ MIT License - A short and simple permissive license with conditions only requiri
 ## Screenshots
     
 ![application](/assets/images/application.jpg)
-![readme](/assets/images/readme.jpg)
+![github](/assets/images/github.jpg)
